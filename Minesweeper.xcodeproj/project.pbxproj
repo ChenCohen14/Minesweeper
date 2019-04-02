@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859762253654D00A3F3E4 /* AppDelegate.swift */; };
-		A43859792253654D00A3F3E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859782253654D00A3F3E4 /* ViewController.swift */; };
+		A43859792253654D00A3F3E4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859782253654D00A3F3E4 /* WelcomeViewController.swift */; };
 		A438597C2253654D00A3F3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A438597A2253654D00A3F3E4 /* Main.storyboard */; };
 		A438597E2253655300A3F3E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A438597D2253655300A3F3E4 /* Assets.xcassets */; };
 		A43859812253655300A3F3E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A438597F2253655300A3F3E4 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		A43859732253654D00A3F3E4 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43859762253654D00A3F3E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A43859782253654D00A3F3E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A43859782253654D00A3F3E4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A438597B2253654D00A3F3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A438597D2253655300A3F3E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A43859802253655300A3F3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A43859762253654D00A3F3E4 /* AppDelegate.swift */,
-				A43859782253654D00A3F3E4 /* ViewController.swift */,
+				A43859782253654D00A3F3E4 /* WelcomeViewController.swift */,
 				A438597A2253654D00A3F3E4 /* Main.storyboard */,
 				A438597D2253655300A3F3E4 /* Assets.xcassets */,
 				A438597F2253655300A3F3E4 /* LaunchScreen.storyboard */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A43859792253654D00A3F3E4 /* ViewController.swift in Sources */,
+				A43859792253654D00A3F3E4 /* WelcomeViewController.swift in Sources */,
 				A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87JPL66L2H;
 				INFOPLIST_FILE = Minesweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87JPL66L2H;
 				INFOPLIST_FILE = Minesweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,24 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minesweeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDi-1X-1E3">
+                                <rect key="frame" x="57" y="45" width="261" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="7l8-Ij-aT1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wah-js-Xxn">
+                                <rect key="frame" x="121" y="472" width="133" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="b9G-Oe-2Rp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="HIgh Scores">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNr-PG-YoM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tI-Dk-SvD">
+                                <rect key="frame" x="166" y="600" width="43" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="PuE-Hv-6sW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ati-45-t1L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySu-yw-kdg">
+                                <rect key="frame" x="164" y="347" width="47" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="AEa-V0-tPI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoP-t8-r7y"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter your name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-1U-qwl">
+                                <rect key="frame" x="89" y="263" width="197" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aFu-fO-V7l"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minesweeperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FKs-wC-Phw">
+                                <rect key="frame" x="106" y="107" width="163" height="134"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62161164859736395" green="1" blue="0.036744564677982927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ySu-yw-kdg" firstAttribute="centerX" secondItem="wah-js-Xxn" secondAttribute="centerX" id="0by-kg-4lV"/>
+                            <constraint firstItem="8tI-Dk-SvD" firstAttribute="top" secondItem="wah-js-Xxn" secondAttribute="bottom" constant="86" id="84w-6w-tkG"/>
+                            <constraint firstItem="ySu-yw-kdg" firstAttribute="top" secondItem="HmM-1U-qwl" secondAttribute="bottom" constant="54" id="AX2-9O-Lzc"/>
+                            <constraint firstItem="wah-js-Xxn" firstAttribute="top" secondItem="ySu-yw-kdg" secondAttribute="bottom" constant="83" id="AhC-vg-CEm"/>
+                            <constraint firstItem="wah-js-Xxn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="DaI-ku-mOa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8tI-Dk-SvD" secondAttribute="bottom" constant="25" id="EMs-fa-Pen"/>
+                            <constraint firstItem="YDi-1X-1E3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="FbW-8S-m0V"/>
+                            <constraint firstItem="HmM-1U-qwl" firstAttribute="centerX" secondItem="ySu-yw-kdg" secondAttribute="centerX" id="GRa-O1-XdX"/>
+                            <constraint firstItem="ySu-yw-kdg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="JiB-eu-EId"/>
+                            <constraint firstItem="HmM-1U-qwl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="TLC-5D-Vca"/>
+                            <constraint firstItem="YDi-1X-1E3" firstAttribute="centerX" secondItem="FKs-wC-Phw" secondAttribute="centerX" id="bSR-re-cTt"/>
+                            <constraint firstItem="HmM-1U-qwl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="etS-Fu-2IO"/>
+                            <constraint firstItem="HmM-1U-qwl" firstAttribute="top" secondItem="FKs-wC-Phw" secondAttribute="bottom" constant="22" id="jlF-Ze-4VZ"/>
+                            <constraint firstItem="8tI-Dk-SvD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="mVz-41-SGG"/>
+                            <constraint firstItem="YDi-1X-1E3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="p7A-hQ-KL4"/>
+                            <constraint firstItem="FKs-wC-Phw" firstAttribute="top" secondItem="YDi-1X-1E3" secondAttribute="bottom" constant="8" symbolic="YES" id="ttd-9F-CHq"/>
+                            <constraint firstItem="FKs-wC-Phw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="w26-fs-Q0X"/>
+                            <constraint firstItem="YDi-1X-1E3" firstAttribute="centerX" secondItem="HmM-1U-qwl" secondAttribute="centerX" id="xe4-F5-mrM"/>
+                            <constraint firstItem="FKs-wC-Phw" firstAttribute="centerX" secondItem="8tI-Dk-SvD" secondAttribute="centerX" id="zyA-Xr-Htt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="userName" destination="HmM-1U-qwl" id="Om7-JK-q9u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="116.49175412293854"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minesweeperLogo" width="256" height="256"/>
+    </resources>
 </document>
