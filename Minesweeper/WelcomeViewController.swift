@@ -12,13 +12,7 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var userName: UITextField!
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        self.userName.resignFirstResponder()
-        let title = sender.title(for: .normal)!
-        
-        
-        
-    }
+
     
     //built in method
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
