@@ -10,14 +10,13 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+  
     @IBOutlet weak var userName: UITextField!
+    
     
 
     
-    //built in method
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-    }
+
     
 }
 
