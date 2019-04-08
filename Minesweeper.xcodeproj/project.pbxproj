@@ -14,6 +14,9 @@
 		A43859812253655300A3F3E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A438597F2253655300A3F3E4 /* LaunchScreen.storyboard */; };
 		A4BA984B225B454300CD7704 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984A225B454300CD7704 /* Cell.swift */; };
 		A4BA984D225B683000CD7704 /* MineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984C225B683000CD7704 /* MineField.swift */; };
+		A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984E225BA48400CD7704 /* GameManager.swift */; };
+		A4BA9851225BAB0000CD7704 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9850225BAB0000CD7704 /* Timer.swift */; };
+		A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9854225BBD6400CD7704 /* Difficulty.swift */; };
 		A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6BBF5225A66E600D5727B /* ButtonCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		A43859822253655300A3F3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BA984A225B454300CD7704 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		A4BA984C225B683000CD7704 /* MineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineField.swift; sourceTree = "<group>"; };
+		A4BA984E225BA48400CD7704 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		A4BA9850225BAB0000CD7704 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		A4BA9854225BBD6400CD7704 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		A4E6BBF5225A66E600D5727B /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,9 @@
 			children = (
 				A4BA984A225B454300CD7704 /* Cell.swift */,
 				A4BA984C225B683000CD7704 /* MineField.swift */,
+				A4BA984E225BA48400CD7704 /* GameManager.swift */,
+				A4BA9854225BBD6400CD7704 /* Difficulty.swift */,
+				A4BA9850225BAB0000CD7704 /* Timer.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -153,9 +162,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43859792253654D00A3F3E4 /* WelcomeViewController.swift in Sources */,
+				A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */,
+				A4BA9851225BAB0000CD7704 /* Timer.swift in Sources */,
 				A4BA984D225B683000CD7704 /* MineField.swift in Sources */,
 				A4BA984B225B454300CD7704 /* Cell.swift in Sources */,
 				A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */,
+				A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */,
 				A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
