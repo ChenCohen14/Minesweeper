@@ -13,6 +13,7 @@
 		A438597E2253655300A3F3E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A438597D2253655300A3F3E4 /* Assets.xcassets */; };
 		A43859812253655300A3F3E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A438597F2253655300A3F3E4 /* LaunchScreen.storyboard */; };
 		A4BA984B225B454300CD7704 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984A225B454300CD7704 /* Cell.swift */; };
+		A4BA984D225B683000CD7704 /* MineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984C225B683000CD7704 /* MineField.swift */; };
 		A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6BBF5225A66E600D5727B /* ButtonCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		A43859802253655300A3F3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A43859822253655300A3F3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BA984A225B454300CD7704 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		A4BA984C225B683000CD7704 /* MineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineField.swift; sourceTree = "<group>"; };
 		A4E6BBF5225A66E600D5727B /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A4BA984A225B454300CD7704 /* Cell.swift */,
+				A4BA984C225B683000CD7704 /* MineField.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43859792253654D00A3F3E4 /* WelcomeViewController.swift in Sources */,
+				A4BA984D225B683000CD7704 /* MineField.swift in Sources */,
 				A4BA984B225B454300CD7704 /* Cell.swift in Sources */,
 				A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */,
 				A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */,
