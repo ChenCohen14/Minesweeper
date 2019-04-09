@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859762253654D00A3F3E4 /* AppDelegate.swift */; };
-		A43859792253654D00A3F3E4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859782253654D00A3F3E4 /* WelcomeViewController.swift */; };
+		A43859792253654D00A3F3E4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859782253654D00A3F3E4 /* WelcomeVC.swift */; };
 		A438597C2253654D00A3F3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A438597A2253654D00A3F3E4 /* Main.storyboard */; };
 		A438597E2253655300A3F3E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A438597D2253655300A3F3E4 /* Assets.xcassets */; };
 		A43859812253655300A3F3E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A438597F2253655300A3F3E4 /* LaunchScreen.storyboard */; };
@@ -17,13 +17,15 @@
 		A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984E225BA48400CD7704 /* GameManager.swift */; };
 		A4BA9851225BAB0000CD7704 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9850225BAB0000CD7704 /* Timer.swift */; };
 		A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9854225BBD6400CD7704 /* Difficulty.swift */; };
+		A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */; };
+		A4E5BBDA225CD868001743C4 /* GameBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */; };
 		A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6BBF5225A66E600D5727B /* ButtonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A43859732253654D00A3F3E4 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43859762253654D00A3F3E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A43859782253654D00A3F3E4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		A43859782253654D00A3F3E4 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		A438597B2253654D00A3F3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A438597D2253655300A3F3E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A43859802253655300A3F3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,6 +35,8 @@
 		A4BA984E225BA48400CD7704 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		A4BA9850225BAB0000CD7704 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		A4BA9854225BBD6400CD7704 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyVC.swift; sourceTree = "<group>"; };
+		A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVC.swift; sourceTree = "<group>"; };
 		A4E6BBF5225A66E600D5727B /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,11 +70,11 @@
 		A43859752253654D00A3F3E4 /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
+				A4E5BBD6225CB6F3001743C4 /* Controller */,
+				A4E5BBD4225CB6C1001743C4 /* View */,
 				A43859762253654D00A3F3E4 /* AppDelegate.swift */,
-				A4BA9849225B44FB00CD7704 /* Logic */,
-				A43859782253654D00A3F3E4 /* WelcomeViewController.swift */,
+				A4BA9849225B44FB00CD7704 /* Model */,
 				A438597A2253654D00A3F3E4 /* Main.storyboard */,
-				A4E6BBF5225A66E600D5727B /* ButtonCell.swift */,
 				A438597D2253655300A3F3E4 /* Assets.xcassets */,
 				A438597F2253655300A3F3E4 /* LaunchScreen.storyboard */,
 				A43859822253655300A3F3E4 /* Info.plist */,
@@ -78,7 +82,7 @@
 			path = Minesweeper;
 			sourceTree = "<group>";
 		};
-		A4BA9849225B44FB00CD7704 /* Logic */ = {
+		A4BA9849225B44FB00CD7704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A4BA984A225B454300CD7704 /* Cell.swift */,
@@ -87,7 +91,25 @@
 				A4BA9854225BBD6400CD7704 /* Difficulty.swift */,
 				A4BA9850225BAB0000CD7704 /* Timer.swift */,
 			);
-			path = Logic;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A4E5BBD4225CB6C1001743C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4E6BBF5225A66E600D5727B /* ButtonCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4E5BBD6225CB6F3001743C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A43859782253654D00A3F3E4 /* WelcomeVC.swift */,
+				A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */,
+				A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,11 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A43859792253654D00A3F3E4 /* WelcomeViewController.swift in Sources */,
+				A43859792253654D00A3F3E4 /* WelcomeVC.swift in Sources */,
 				A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */,
 				A4BA9851225BAB0000CD7704 /* Timer.swift in Sources */,
+				A4E5BBDA225CD868001743C4 /* GameBoardVC.swift in Sources */,
 				A4BA984D225B683000CD7704 /* MineField.swift in Sources */,
 				A4BA984B225B454300CD7704 /* Cell.swift in Sources */,
+				A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */,
 				A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */,
 				A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */,
 				A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */,

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sm0-fI-14E" kind="show" id="kY2-uS-388"/>
+                                    <action selector="playPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Swn-ic-urf"/>
+                                    <segue destination="sm0-fI-14E" kind="show" identifier="DifficultyVC" id="kY2-uS-388"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter your name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-1U-qwl">
@@ -106,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="116.49175412293854"/>
         </scene>
-        <!--View Controller-->
+        <!--DifficultyVC-->
         <scene sceneID="N4D-f5-rFS">
             <objects>
-                <viewController id="sm0-fI-14E" sceneMemberID="viewController">
+                <viewController id="sm0-fI-14E" customClass="DifficultyVC" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nh8-5u-5uQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +134,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mJ7-Xv-es0" kind="show" id="uVc-18-Vsb"/>
+                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="ZG6-kC-2gb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVL-mC-IRf">
@@ -146,7 +147,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mJ7-Xv-es0" kind="show" id="QxB-9G-V4F"/>
+                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="rhE-A8-IXE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-re-tKb">
@@ -159,7 +160,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mJ7-Xv-es0" kind="show" id="WdC-r4-GgT"/>
+                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="Ihr-cQ-b2R"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="minesweeperDifficulty" translatesAutoresizingMaskIntoConstraints="NO" id="OB3-zJ-GXk">
@@ -186,15 +187,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G69-ZL-lQX"/>
                     </view>
+                    <connections>
+                        <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="4S3-6Y-puC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKr-j7-n1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2033" y="116"/>
         </scene>
-        <!--View Controller-->
+        <!--Game BoardVC-->
         <scene sceneID="um8-IO-3cL">
             <objects>
-                <viewController id="mJ7-Xv-es0" sceneMemberID="viewController">
+                <viewController id="mJ7-Xv-es0" customClass="GameBoardVC" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2x2-XY-kjF" customClass="ButtonCell" customModule="Minesweeper" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,24 +214,25 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FaR-g7-vdb" customClass="ButtonCell" customModule="Minesweeper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="78" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-Pm-h6B">
-                                                    <rect key="frame" x="8" y="28" width="62" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                     <state key="normal" image="cell"/>
                                                 </button>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="nGu-Pm-h6B" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="topMargin" id="H1z-6C-bTF"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="nGu-Pm-h6B" secondAttribute="bottom" id="Pg1-6Y-3kJ"/>
-                                            <constraint firstItem="nGu-Pm-h6B" firstAttribute="leading" secondItem="FaR-g7-vdb" secondAttribute="leadingMargin" id="ShT-Fd-RAs"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="nGu-Pm-h6B" secondAttribute="trailing" id="kX0-FE-sCj"/>
+                                            <constraint firstAttribute="trailing" secondItem="nGu-Pm-h6B" secondAttribute="trailing" id="8Bz-c2-cro"/>
+                                            <constraint firstItem="nGu-Pm-h6B" firstAttribute="leading" secondItem="FaR-g7-vdb" secondAttribute="leading" id="Kex-eu-xro"/>
+                                            <constraint firstItem="nGu-Pm-h6B" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="top" id="q6E-92-hi3"/>
+                                            <constraint firstAttribute="bottom" secondItem="nGu-Pm-h6B" secondAttribute="bottom" id="rDP-fN-8E9"/>
                                         </constraints>
+                                        <size key="customSize" width="40" height="40"/>
                                         <connections>
                                             <outlet property="button" destination="nGu-Pm-h6B" id="GOp-C0-RsR"/>
                                         </connections>
@@ -273,7 +278,4 @@
         <image name="minesweeperDifficulty" width="512" height="512"/>
         <image name="minesweeperLogo" width="256" height="256"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="WdC-r4-GgT"/>
-    </inferredMetricsTieBreakers>
 </document>

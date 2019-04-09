@@ -10,11 +10,11 @@ import Foundation
 
 
 //Game Manager Class, refers to all SINGLE game logic
-public class GameManager {
+class GameManager {
     
     var board: MineField
     var time:Timer
-  //  var highScore: HighScore
+    //  var highScore: HighScore
     var mineLeft: Int
     var firstMove: Bool
     var level: Difficulty
@@ -49,13 +49,13 @@ public class GameManager {
         var isWon = true
         for i in 0..<board.getRows(){
             if isWon{
-            for j in 0..<board.getCols(){
-                if isWon{
-                    if (board.getCell(row: i,col: j).isCovered() && !board.getCell(row: i,col: j).isFlagged()){
-                    isWon = false
+                for j in 0..<board.getCols(){
+                    if isWon{
+                        if (board.getCell(row: i,col: j).isCovered() && !board.getCell(row: i,col: j).isFlagged()){
+                            isWon = false
+                        }
+                        
                     }
-                    
-                }
                 }
             }
         }
@@ -64,7 +64,7 @@ public class GameManager {
             return true
         }
         else{
-        return false
+            return false
         }
     }
     
@@ -118,7 +118,7 @@ public class GameManager {
     }
     
     // add mine to the game board
-   func addMineToGame()-> Void {
+    func addMineToGame()-> Void {
         if(board.getMineNum() < board.getRows()*board.getCols()) {
             board.addMine()
             mineLeft = board.getMineNum()
@@ -134,7 +134,7 @@ public class GameManager {
         return isGameOver;
     }
     
-   func getBoard() -> MineField {
+    func getBoard() -> MineField {
         return board;
     }
     
@@ -146,14 +146,14 @@ public class GameManager {
         return time;
     }
     
-//    func getHighScore() -> HighScore {
-//        return highScore;
-//    }
-//
-//    //sets the game high score record - player name, ticks from the timer, and the level
-//    func setHighScore(Context context) -> Void {
-//        this.highScore = new HighScore(time.getTicks(),level,context);
-//    }
+    //    func getHighScore() -> HighScore {
+    //        return highScore;
+    //    }
+    //
+    //    //sets the game high score record - player name, ticks from the timer, and the level
+    //    func setHighScore(Context context) -> Void {
+    //        this.highScore = new HighScore(time.getTicks(),level,context);
+    //    }
     
     //check if board is all mined
     func isAllBoardIsMined() -> Bool {
