@@ -12,6 +12,9 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
   
 
     @IBOutlet weak var buttonsCollection : UICollectionView!
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
     var level = ""
     
     override func viewDidLoad() {
@@ -19,6 +22,18 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         buttonsCollection.dataSource = self
         buttonsCollection.delegate = self
+        
+        screenSize = UIScreen.main.bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: 35, height: 35)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        buttonsCollection.collectionViewLayout = layout
 
 
         print(level)
@@ -36,6 +51,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
         return ButtonCell()
     }
+
 
 
 }
