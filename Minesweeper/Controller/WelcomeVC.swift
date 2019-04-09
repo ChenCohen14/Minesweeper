@@ -17,13 +17,10 @@ class WelcomeVC: UIViewController {
     
     
     
-    @IBAction func playPressed(_ sender: UIButton) {
-            name = userName.text!
-            performSegue(withIdentifier: "DifficultyVC", sender: self)
-        
-    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let difficultyVC = segue.destination as! DifficultyVC
+        name = userName.text!
         difficultyVC.name = name
     }
 

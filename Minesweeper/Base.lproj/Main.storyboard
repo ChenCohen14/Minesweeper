@@ -57,8 +57,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="playPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Swn-ic-urf"/>
-                                    <segue destination="sm0-fI-14E" kind="show" identifier="DifficultyVC" id="kY2-uS-388"/>
+                                    <segue destination="sm0-fI-14E" kind="show" identifier="DifficultyVC" id="4do-zc-QPW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter your name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-1U-qwl">
@@ -134,7 +133,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="ZG6-kC-2gb"/>
+                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="LJi-Wa-naU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVL-mC-IRf">
@@ -147,7 +146,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="rhE-A8-IXE"/>
+                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="zuh-7E-jF2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-re-tKb">
@@ -160,7 +159,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="Ihr-cQ-b2R"/>
+                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="4e2-Cp-rdA"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="minesweeperDifficulty" translatesAutoresizingMaskIntoConstraints="NO" id="OB3-zJ-GXk">
@@ -187,9 +186,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G69-ZL-lQX"/>
                     </view>
-                    <connections>
-                        <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="4S3-6Y-puC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKr-j7-n1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,7 +195,7 @@
         <scene sceneID="um8-IO-3cL">
             <objects>
                 <viewController id="mJ7-Xv-es0" customClass="GameBoardVC" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2x2-XY-kjF" customClass="ButtonCell" customModule="Minesweeper" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="2x2-XY-kjF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -207,35 +203,32 @@
                                 <rect key="frame" x="68" y="192" width="239" height="347"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fvl-fh-ib6">
-                                    <size key="itemSize" width="78" height="80"/>
+                                    <size key="itemSize" width="40" height="40"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FaR-g7-vdb" customClass="ButtonCell" customModule="Minesweeper" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCell" id="FaR-g7-vdb" customClass="ButtonCell" customModule="Minesweeper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-Pm-h6B">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCL-Pm-V1M">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                     <state key="normal" image="cell"/>
                                                 </button>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="nGu-Pm-h6B" secondAttribute="trailing" id="8Bz-c2-cro"/>
-                                            <constraint firstItem="nGu-Pm-h6B" firstAttribute="leading" secondItem="FaR-g7-vdb" secondAttribute="leading" id="Kex-eu-xro"/>
-                                            <constraint firstItem="nGu-Pm-h6B" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="top" id="q6E-92-hi3"/>
-                                            <constraint firstAttribute="bottom" secondItem="nGu-Pm-h6B" secondAttribute="bottom" id="rDP-fN-8E9"/>
+                                            <constraint firstAttribute="bottom" secondItem="bCL-Pm-V1M" secondAttribute="bottom" id="58Z-Wh-eD8"/>
+                                            <constraint firstItem="bCL-Pm-V1M" firstAttribute="leading" secondItem="FaR-g7-vdb" secondAttribute="leading" id="MOK-jX-ugh"/>
+                                            <constraint firstAttribute="trailing" secondItem="bCL-Pm-V1M" secondAttribute="trailing" id="f2s-4C-Hfy"/>
+                                            <constraint firstItem="bCL-Pm-V1M" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="top" id="yES-5U-2Sj"/>
                                         </constraints>
                                         <size key="customSize" width="40" height="40"/>
-                                        <connections>
-                                            <outlet property="button" destination="nGu-Pm-h6B" id="GOp-C0-RsR"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -249,6 +242,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RrR-6k-Pgh"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonsCollection" destination="i4c-MA-jkJ" id="qF7-zl-yQQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4d-XX-7fW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,4 +274,7 @@
         <image name="minesweeperDifficulty" width="512" height="512"/>
         <image name="minesweeperLogo" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LJi-Wa-naU"/>
+    </inferredMetricsTieBreakers>
 </document>

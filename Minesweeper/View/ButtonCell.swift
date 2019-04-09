@@ -10,7 +10,6 @@ import UIKit
 
 class ButtonCell: UICollectionViewCell {
     
-    @IBOutlet weak var button: UIButton!
     
  
 }
