@@ -11,7 +11,7 @@ import UIKit
 class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   
 
-    @IBOutlet weak var buttonsCollection : UICollectionView!
+    @IBOutlet weak var imagesCollection : UICollectionView!
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
@@ -20,8 +20,8 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttonsCollection.dataSource = self
-        buttonsCollection.delegate = self
+        imagesCollection.dataSource = self
+        imagesCollection.delegate = self
         
         screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width
@@ -33,23 +33,37 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         layout.itemSize = CGSize(width: 35, height: 35)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        buttonsCollection.collectionViewLayout = layout
+        imagesCollection.collectionViewLayout = layout
 
 
         print(level)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 5
+    }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCell", for: indexPath) as? ButtonCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
             return cell
         }
 
-        return ButtonCell()
+        return ImageCollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.section)
+        print(indexPath.row)
+        let cell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
+        imagesCollection.reloadItems(at: [indexPath])
+        cell.changeImage()
+       imagesCollection.reloadItems(at: [indexPath])
+
+        
     }
 
 

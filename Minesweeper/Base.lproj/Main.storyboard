@@ -209,26 +209,28 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCell" id="FaR-g7-vdb" customClass="ButtonCell" customModule="Minesweeper" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="FaR-g7-vdb" customClass="ImageCollectionViewCell" customModule="Minesweeper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCL-Pm-V1M">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell" translatesAutoresizingMaskIntoConstraints="NO" id="TsO-hu-P0t">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <state key="normal" image="cell"/>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="bCL-Pm-V1M" secondAttribute="bottom" id="58Z-Wh-eD8"/>
-                                            <constraint firstItem="bCL-Pm-V1M" firstAttribute="leading" secondItem="FaR-g7-vdb" secondAttribute="leading" id="MOK-jX-ugh"/>
-                                            <constraint firstAttribute="trailing" secondItem="bCL-Pm-V1M" secondAttribute="trailing" id="f2s-4C-Hfy"/>
-                                            <constraint firstItem="bCL-Pm-V1M" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="top" id="yES-5U-2Sj"/>
+                                            <constraint firstAttribute="trailing" secondItem="TsO-hu-P0t" secondAttribute="trailing" id="Aa2-om-aqw"/>
+                                            <constraint firstItem="TsO-hu-P0t" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="top" id="I1H-hX-AfQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="TsO-hu-P0t" secondAttribute="bottom" id="cip-mE-4WR"/>
+                                            <constraint firstItem="TsO-hu-P0t" firstAttribute="leading" secondItem="FaR-g7-vdb" secondAttribute="leading" id="sze-RR-j44"/>
                                         </constraints>
                                         <size key="customSize" width="40" height="40"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="TsO-hu-P0t" id="Sn2-DY-STF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -243,7 +245,7 @@
                         <viewLayoutGuide key="safeArea" id="RrR-6k-Pgh"/>
                     </view>
                     <connections>
-                        <outlet property="buttonsCollection" destination="i4c-MA-jkJ" id="qF7-zl-yQQ"/>
+                        <outlet property="imagesCollection" destination="i4c-MA-jkJ" id="qF7-zl-yQQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4d-XX-7fW" userLabel="First Responder" sceneMemberID="firstResponder"/>

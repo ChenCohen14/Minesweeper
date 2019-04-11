@@ -19,7 +19,7 @@
 		A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9854225BBD6400CD7704 /* Difficulty.swift */; };
 		A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */; };
 		A4E5BBDA225CD868001743C4 /* GameBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */; };
-		A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6BBF5225A66E600D5727B /* ButtonCell.swift */; };
+		A4E6BBF6225A66E600D5727B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6BBF5225A66E600D5727B /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		A4BA9854225BBD6400CD7704 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyVC.swift; sourceTree = "<group>"; };
 		A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVC.swift; sourceTree = "<group>"; };
-		A4E6BBF5225A66E600D5727B /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		A4E6BBF5225A66E600D5727B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 		A4E5BBD4225CB6C1001743C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A4E6BBF5225A66E600D5727B /* ButtonCell.swift */,
+				A4E6BBF5225A66E600D5727B /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 				A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */,
 				A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */,
 				A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */,
-				A4E6BBF6225A66E600D5727B /* ButtonCell.swift in Sources */,
+				A4E6BBF6225A66E600D5727B /* ImageCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
