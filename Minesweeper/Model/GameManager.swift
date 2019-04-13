@@ -41,7 +41,7 @@ class GameManager {
     
     //the game level enum
     func getLevel() -> Difficulty {
-        return level;
+        return level
     }
     
     //checks if the single game is in winning state - all not mined cells were revealed

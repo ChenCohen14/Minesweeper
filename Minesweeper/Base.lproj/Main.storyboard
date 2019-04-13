@@ -222,16 +222,26 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell" translatesAutoresizingMaskIntoConstraints="NO" id="TsO-hu-P0t">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OB-Ij-oUo">
+                                                    <rect key="frame" x="-1" y="10" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="TsO-hu-P0t" secondAttribute="trailing" id="Aa2-om-aqw"/>
+                                            <constraint firstItem="8OB-Ij-oUo" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="topMargin" constant="-10" id="EI2-Vw-GpA"/>
                                             <constraint firstItem="TsO-hu-P0t" firstAttribute="top" secondItem="FaR-g7-vdb" secondAttribute="top" id="I1H-hX-AfQ"/>
+                                            <constraint firstItem="8OB-Ij-oUo" firstAttribute="centerY" secondItem="TsO-hu-P0t" secondAttribute="centerY" id="ZOO-XY-GMl"/>
                                             <constraint firstAttribute="bottom" secondItem="TsO-hu-P0t" secondAttribute="bottom" id="cip-mE-4WR"/>
+                                            <constraint firstItem="8OB-Ij-oUo" firstAttribute="centerX" secondItem="TsO-hu-P0t" secondAttribute="centerX" id="fcf-ys-CpE"/>
                                             <constraint firstItem="TsO-hu-P0t" firstAttribute="leading" secondItem="FaR-g7-vdb" secondAttribute="leading" id="sze-RR-j44"/>
                                         </constraints>
                                         <size key="customSize" width="40" height="40"/>
                                         <connections>
+                                            <outlet property="hintNumber" destination="8OB-Ij-oUo" id="8zg-hD-Ezy"/>
                                             <outlet property="imageCell" destination="TsO-hu-P0t" id="Ier-PU-lsq"/>
                                         </connections>
                                     </collectionViewCell>
