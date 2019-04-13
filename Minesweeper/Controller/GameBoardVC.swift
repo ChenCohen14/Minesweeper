@@ -68,15 +68,17 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         print(indexPath.row)
         gameManger.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
         let cell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
-        if(isFlag){
-            cell.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-            cell.imageName = "flag"
-        }
-        else{
-            cell.imageName = "cell"
-        }
+//        if(isFlag){
+//            cell.imageName = "flag"
+//            cell.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+//        }
+//        else{
+//            cell.backgroundColor = #colorLiteral(red: 0.2404436574, green: 1, blue: 0.1474604859, alpha: 1)
+//            cell.imageName = "cell"
+//        }
      //   imagesCollection.reloadItems(at: [indexPath])
-        cell.changeImage()
+       // cell.changeImage()
+        updateUI()
        imagesCollection.reloadItems(at: [indexPath])
 
         
@@ -93,6 +95,25 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         
     }
+    
+    func updateUI(){
+        for row in 0..<gameManger.getBoard().getRows(){
+            for col in 0..<gameManger.getBoard().getCols(){
+                var cell = gameManger.getBoard().getCell(row: row, col: col)
+                var imageCell = imageCells[(row*gameManger.getBoard().getCols())+col]
+                imageCell.isFlag = cell.flagged
+                imageCell.number = "\(cell.getValue())"
+                imageCell.exposed = cell.isCovered()
+                imageCell.changeImage()
+                
+                
+                
+            }
+        }
+        
+    }
+    
+    
     
 }
 
