@@ -10,12 +10,18 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageCell: UIImageView!
+    
+    
+    var imageName = "minesweeperLogo"
     
     func changeImage(){
         print(" in changeImage()")
-        imageView.image = UIImage(named: "minesweeperLogo")
+        print(imageName)
+        imageCell.image = UIImage(named: imageName)
+        
         print(" after changeImage()")
+     
 
     }
  

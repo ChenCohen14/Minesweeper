@@ -16,6 +16,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     var level = ""
+     var gameManger : GameManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
-        
+
         // Do any additional setup after loading the view, typically from a nib.
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -34,17 +35,20 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         imagesCollection.collectionViewLayout = layout
+        
+        var theLevel = Difficulty.getDifficultyBy(difficultyname: level)
+        self.gameManger = GameManager(level: theLevel)
 
 
         print(level)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return gameManger.getBoard().getCols()
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return gameManger.getBoard().getRows()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

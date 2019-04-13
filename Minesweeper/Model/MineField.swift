@@ -61,8 +61,8 @@ class MineField {
     
     //initialize game grid , cell values to zero
     func initGameGrid() -> Void{
-        for row in 0..<gameGrid.count{
-            for col in 0 ..< gameGrid[row].count{
+        for row in 0..<self.rows{
+            for col in 0 ..< self.cols{
                 gameGrid[row][col] = Cell(value: 0)
             }
         }
@@ -74,8 +74,8 @@ class MineField {
         var randomCol = 0
         var i = 0
         while (i < mineNum) {
-            randomRow =  Int(Double.random(in:0...1) * Double(rows))
-            randomCol =  Int(Double.random(in:0...1) * Double(cols))
+            randomRow =  Int(Double.random(in:0..<1) * Double(rows))
+            randomCol =  Int(Double.random(in:0..<1) * Double(cols))
             if (!checkMine(row: randomRow,col: randomCol)) {
                 gameGrid[randomRow][randomCol] = Cell(value: Cell.MINE_VALUE)
                 adjustNeighboursValues(row: randomRow,col: randomCol)
@@ -88,8 +88,8 @@ class MineField {
     func addMine() -> Void {
         var randomRow = 0
         var randomCol = 0
-        randomRow =  Int(Double.random(in:0...1) * Double(rows))
-        randomCol =  Int(Double.random(in:0...1) * Double(cols))
+        randomRow =  Int(Double.random(in:0..<1) * Double(rows))
+        randomCol =  Int(Double.random(in:0..<1) * Double(cols))
         if (!checkMine(row: randomRow,col: randomCol)) {
             mineNum+=1
             gameGrid[randomRow][randomCol].setMineValue()

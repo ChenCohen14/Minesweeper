@@ -133,7 +133,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="LJi-Wa-naU"/>
+                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="ZOV-aF-UHU"/>
+                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="QGv-ra-JGo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVL-mC-IRf">
@@ -146,7 +147,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="zuh-7E-jF2"/>
+                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="pqd-ku-6MT"/>
+                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="5bn-g5-tbp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-re-tKb">
@@ -159,7 +161,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="4e2-Cp-rdA"/>
+                                    <action selector="levelBtPressed:" destination="sm0-fI-14E" eventType="touchUpInside" id="T4n-gZ-cti"/>
+                                    <segue destination="mJ7-Xv-es0" kind="show" identifier="GameBoardVC" id="RK6-iq-WDg"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="minesweeperDifficulty" translatesAutoresizingMaskIntoConstraints="NO" id="OB3-zJ-GXk">
@@ -229,7 +232,7 @@
                                         </constraints>
                                         <size key="customSize" width="40" height="40"/>
                                         <connections>
-                                            <outlet property="imageView" destination="TsO-hu-P0t" id="Sn2-DY-STF"/>
+                                            <outlet property="imageCell" destination="TsO-hu-P0t" id="Ier-PU-lsq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -277,6 +280,6 @@
         <image name="minesweeperLogo" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LJi-Wa-naU"/>
+        <segue reference="RK6-iq-WDg"/>
     </inferredMetricsTieBreakers>
 </document>
