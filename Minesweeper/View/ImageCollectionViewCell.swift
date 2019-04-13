@@ -11,7 +11,7 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageCell: UIImageView!
-    var imageName = "minesweeperLogo"
+    var imageName = "cell"
     
     func changeImage(){
         print(" in changeImage()")

@@ -68,6 +68,13 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         print(indexPath.row)
         gameManger.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
         let cell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
+        if(isFlag){
+            cell.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+            cell.imageName = "flag"
+        }
+        else{
+            cell.imageName = "cell"
+        }
      //   imagesCollection.reloadItems(at: [indexPath])
         cell.changeImage()
        imagesCollection.reloadItems(at: [indexPath])
