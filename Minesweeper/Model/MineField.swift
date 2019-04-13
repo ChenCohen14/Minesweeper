@@ -14,7 +14,7 @@ class MineField {
     var rows = 0
     var cols = 0
     var mineNum : Int
-    var gameGrid : [[Cell]] = []
+    var gameGrid : [Cell] = []
     
     //Constructor - initialize the grid values and the mines positions
     init (rows : Int,cols:Int, mineNum:Int) {
@@ -40,18 +40,18 @@ class MineField {
     //reveal the cell
     func reveal(row: Int,col: Int) -> Void
     {
-        gameGrid[row][col].setCovered(covered: false)
+        gameGrid[row*self.cols+col].setCovered(covered: false)
     }
     
     //flaged the cell
     func flag(row: Int, col: Int, on_off: Bool) -> Void
     {
-        gameGrid[row][col].setFlagged(flagged: on_off)
+        gameGrid[row*self.cols+col].setFlagged(flagged: on_off)
     }
     
     //checks if the cell is mined
     func checkMine(row: Int, col: Int)-> Bool {
-        if gameGrid[row][col].getValue() == Cell.MINE_VALUE {
+        if gameGrid[row*self.cols+col].getValue() == Cell.MINE_VALUE {
             return true
         }
         else{
@@ -63,7 +63,7 @@ class MineField {
     func initGameGrid() -> Void{
         for row in 0..<self.rows{
             for col in 0 ..< self.cols{
-                gameGrid[row][col] = Cell(value: 0)
+                gameGrid.append(Cell(value: 0))
             }
         }
     }
@@ -77,7 +77,7 @@ class MineField {
             randomRow =  Int(Double.random(in:0..<1) * Double(rows))
             randomCol =  Int(Double.random(in:0..<1) * Double(cols))
             if (!checkMine(row: randomRow,col: randomCol)) {
-                gameGrid[randomRow][randomCol] = Cell(value: Cell.MINE_VALUE)
+                gameGrid[randomRow*self.cols+randomCol] = Cell(value: Cell.MINE_VALUE)
                 adjustNeighboursValues(row: randomRow,col: randomCol)
                 i+=1
             }
@@ -92,7 +92,7 @@ class MineField {
         randomCol =  Int(Double.random(in:0..<1) * Double(cols))
         if (!checkMine(row: randomRow,col: randomCol)) {
             mineNum+=1
-            gameGrid[randomRow][randomCol].setMineValue()
+            gameGrid[randomRow*self.cols+randomCol].setMineValue()
             adjustNeighboursValues(row: randomRow,col: randomCol)
         }
     }
@@ -112,28 +112,28 @@ class MineField {
         }
         
         //left,right,and bottom left neighbours
-        gameGrid[row+i][col].increaseValue()
-        gameGrid[row][col+j].increaseValue()
-        gameGrid[row+i][col+j].increaseValue()
+        gameGrid[(row+i)*self.cols+col].increaseValue()
+        gameGrid[row*self.cols+col+j].increaseValue()
+        gameGrid[(row+i)*self.cols+col+j].increaseValue()
         
         //first or last row
         if(row == 0 || row==rows-1){
             if (col != 0 && col != cols-1){
-                gameGrid[row][col-j].increaseValue()
-                gameGrid[row+i][col-j].increaseValue()
+                gameGrid[row*self.cols+col-j].increaseValue()
+                gameGrid[(row+i)*self.cols+col-j].increaseValue()
             }
         }
             
             //middle rows
         else  {
-            gameGrid[row-i][col].increaseValue()
-            gameGrid[row-i][col+j].increaseValue()
+            gameGrid[(row-i)*self.cols+col].increaseValue()
+            gameGrid[(row-i)*self.cols+col+j].increaseValue()
             
             //first or last column
             if(col != 0 && col != cols-1){
-                gameGrid[row-i][col-j].increaseValue()
-                gameGrid[row][col-j].increaseValue()
-                gameGrid[row+i][col-j].increaseValue()
+                gameGrid[(row-i)*self.cols+col-j].increaseValue()
+                gameGrid[row*self.cols+col-j].increaseValue()
+                gameGrid[(row+i)*self.cols+col-j].increaseValue()
             }
         }
     }
@@ -149,9 +149,9 @@ class MineField {
         for i in minX ..< maxX{
             for j in minY ..< maxY {
                 //checking id the cell is not MINED, REVEALED already  or FLAGGED
-                if (!checkMine(row: i,col: j) && gameGrid[i][j].isCovered() && !gameGrid[i][j].isFlagged()) {
+                if (!checkMine(row: i,col: j) && gameGrid[i*self.cols+j].isCovered() && !gameGrid[i*self.cols+j].isFlagged()) {
                     reveal(row: i, col: j)
-                    if (gameGrid[i][j].getValue() == 0) {
+                    if (gameGrid[i*self.cols+j].getValue() == 0) {
                         // call recursively
                         revealNeighbours(row: i, col: j)
                     }
@@ -161,15 +161,15 @@ class MineField {
     }
     
     func getCell(row: Int,col: Int)-> Cell{
-        return gameGrid[row][col]
+        return gameGrid[row*self.cols+col]
     }
     
     //update Mine Field after adding mines
     func updateMineField() -> Void{
         for i in 0..<rows {
             for j in 0..<cols{
-                gameGrid[i][j].setCovered(covered: true);
-                gameGrid[i][j].setRemoveFlag(removeFlag: false);
+                gameGrid[i*self.cols+j].setCovered(covered: true);
+                gameGrid[i*self.cols+j].setRemoveFlag(removeFlag: false);
             }
         }
     }
