@@ -14,7 +14,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageCell: UIImageView!
     var imageName = "cell"
     var number = ""
-    var exposed = false
+    var covered = true
     var isFlag = false
     
     
@@ -22,7 +22,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         print(" in changeImage()")
         print(imageName)
         
-        if(exposed){
+        if(!covered){
             //self.imageCell.removeFromSuperview()
             self.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             if number == "\(Cell.MINE_VALUE)"{

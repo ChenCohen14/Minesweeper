@@ -17,7 +17,8 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var screenHeight: CGFloat!
     var level = ""
     var isFlag = false
-     var gameManger : GameManager!
+    var gameOver = false
+     var gameManager : GameManager!
     var imageCells:[ImageCollectionViewCell]=[]
 
     
@@ -40,18 +41,18 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         imagesCollection.collectionViewLayout = layout
         
         var theLevel = Difficulty.getDifficultyBy(difficultyname: level)
-        self.gameManger = GameManager(level: theLevel)
+        self.gameManager = GameManager(level: theLevel)
 
 
         print(level)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gameManger.getBoard().getCols()
+        return gameManager.getBoard().getCols()
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return gameManger.getBoard().getRows()
+        return gameManager.getBoard().getRows()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,7 +67,8 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.section)
         print(indexPath.row)
-        gameManger.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
+        gameManager.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
+        gameOver = gameManager.isGameOver
         let cell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
 //        if(isFlag){
 //            cell.imageName = "flag"
@@ -97,14 +99,21 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func updateUI(){
-        for row in 0..<gameManger.getBoard().getRows(){
-            for col in 0..<gameManger.getBoard().getCols(){
-                var cell = gameManger.getBoard().getCell(row: row, col: col)
-                var imageCell = imageCells[(row*gameManger.getBoard().getCols())+col]
+        for row in 0..<gameManager.getBoard().getRows(){
+            for col in 0..<gameManager.getBoard().getCols(){
+                var cell = gameManager.getBoard().getCell(row: row, col: col)
+                var imageCell = imageCells[(row*gameManager.getBoard().getCols())+col]
                 imageCell.isFlag = cell.flagged
                 imageCell.number = "\(cell.getValue())"
-                imageCell.exposed = cell.isCovered()
-                imageCell.changeImage()
+                if(gameOver){
+                    imageCell.covered = false
+                    // TODO: the flag sign doesnt work well
+                }
+                else{
+                imageCell.covered = cell.isCovered()
+                }
+                    imageCell.changeImage()
+                    
                 
                 
                 
