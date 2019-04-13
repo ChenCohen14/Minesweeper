@@ -16,7 +16,10 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     var level = ""
+    var isFlag = false
      var gameManger : GameManager!
+    var imageCells:[ImageCollectionViewCell]=[]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
+            imageCells.append(cell)
             return cell
         }
 
@@ -62,8 +66,9 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.section)
         print(indexPath.row)
+        gameManger.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
         let cell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
-        imagesCollection.reloadItems(at: [indexPath])
+     //   imagesCollection.reloadItems(at: [indexPath])
         cell.changeImage()
        imagesCollection.reloadItems(at: [indexPath])
 
@@ -71,7 +76,17 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
 
 
-
+    @IBAction func flagPressed(_ sender: UIButton) {
+        if sender.currentTitle == "Off"{
+            sender.setTitle("On", for: .normal)
+            isFlag = true
+        } else {
+            sender.setTitle("Off", for: .normal)
+            isFlag = false
+        }
+        
+    }
+    
 }
 
 

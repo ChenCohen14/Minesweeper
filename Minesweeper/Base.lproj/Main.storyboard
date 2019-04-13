@@ -237,10 +237,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-JF-mkH">
+                                <rect key="frame" x="166" y="627" width="30" height="30"/>
+                                <state key="normal" title="Off"/>
+                                <connections>
+                                    <action selector="flagPressed:" destination="mJ7-Xv-es0" eventType="touchUpInside" id="nD3-m3-tm8"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="3Ku-SL-elP">
+                                <rect key="frame" x="166" y="597" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6Za-Z5-0dr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.62161164859999996" green="1" blue="0.036744564680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hgC-JF-mkH" firstAttribute="top" secondItem="3Ku-SL-elP" secondAttribute="bottom" id="2Z7-pf-glX"/>
+                            <constraint firstItem="3Ku-SL-elP" firstAttribute="leading" secondItem="hgC-JF-mkH" secondAttribute="leading" id="4As-HA-hnn"/>
+                            <constraint firstItem="3Ku-SL-elP" firstAttribute="top" secondItem="RrR-6k-Pgh" secondAttribute="top" constant="533" id="DLH-LI-Caa"/>
                             <constraint firstItem="i4c-MA-jkJ" firstAttribute="top" secondItem="RrR-6k-Pgh" secondAttribute="top" constant="187" id="I52-f8-ktX"/>
+                            <constraint firstItem="RrR-6k-Pgh" firstAttribute="trailing" secondItem="3Ku-SL-elP" secondAttribute="trailing" constant="179" id="Nwf-Gg-wtU"/>
+                            <constraint firstItem="3Ku-SL-elP" firstAttribute="leading" secondItem="RrR-6k-Pgh" secondAttribute="leading" constant="166" id="OpD-LX-XjJ"/>
                             <constraint firstItem="i4c-MA-jkJ" firstAttribute="centerX" secondItem="2x2-XY-kjF" secondAttribute="centerX" id="Ty8-0q-H9c"/>
                             <constraint firstItem="RrR-6k-Pgh" firstAttribute="bottom" secondItem="i4c-MA-jkJ" secondAttribute="bottom" constant="69" id="YjL-Yp-OBC"/>
                             <constraint firstItem="i4c-MA-jkJ" firstAttribute="leading" secondItem="RrR-6k-Pgh" secondAttribute="leading" constant="42" id="rdN-aK-xbg"/>
@@ -276,6 +294,7 @@
     </scenes>
     <resources>
         <image name="cell" width="400" height="400"/>
+        <image name="flag" width="460" height="512"/>
         <image name="minesweeperDifficulty" width="512" height="512"/>
         <image name="minesweeperLogo" width="256" height="256"/>
     </resources>
