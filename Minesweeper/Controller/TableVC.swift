@@ -11,7 +11,7 @@ import UIKit
 class TableVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var people = [String]()
+    var people = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +35,8 @@ extension TableVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = ""
-        cell.detailTextLabel?.text = ""
+        cell.textLabel?.text = people[indexPath.row].name
+        cell.detailTextLabel?.text = String(people[indexPath.row].time)
         return cell
         
     }

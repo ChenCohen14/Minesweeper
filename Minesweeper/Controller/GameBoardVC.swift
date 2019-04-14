@@ -98,6 +98,12 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 {
                     var message = self!.gameManager.checkIsGameOver() ? "You Lose" : "You Win!"
                     timer.invalidate()
+                    if self!.gameManager.isWinning(){
+                        let user = User(context: PersistenceService.context)
+                        user.name = self!.userName
+                        user.time = Int16(self!.counter)
+                        PersistenceService.saveContext()
+                    }
                     let alert = UIAlertController(title: "Minesweeper Game", message: message, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default)
                     {
