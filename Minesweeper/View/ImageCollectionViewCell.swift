@@ -19,9 +19,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     
     func changeImage(){
-        print(" in changeImage()")
-        print(imageName)
-        
+   
         if(!covered){
             //self.imageCell.removeFromSuperview()
             self.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
@@ -44,8 +42,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
         }
 
         imageCell.image = UIImage(named: imageName)
-
-        print(" after changeImage()")
      
 
     }
