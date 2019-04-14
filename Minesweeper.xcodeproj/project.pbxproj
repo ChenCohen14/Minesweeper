@@ -16,6 +16,8 @@
 		A4BA984D225B683000CD7704 /* MineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984C225B683000CD7704 /* MineField.swift */; };
 		A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984E225BA48400CD7704 /* GameManager.swift */; };
 		A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9854225BBD6400CD7704 /* Difficulty.swift */; };
+		A4D7D2F12263B35400FCF085 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2EF2263B35400FCF085 /* DataModel.xcdatamodeld */; };
+		A4D7D2F32263BB1400FCF085 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2F22263BB1400FCF085 /* TableVC.swift */; };
 		A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */; };
 		A4E5BBDA225CD868001743C4 /* GameBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */; };
 		A4E6BBF6225A66E600D5727B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6BBF5225A66E600D5727B /* ImageCollectionViewCell.swift */; };
@@ -33,6 +35,8 @@
 		A4BA984C225B683000CD7704 /* MineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineField.swift; sourceTree = "<group>"; };
 		A4BA984E225BA48400CD7704 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		A4BA9854225BBD6400CD7704 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		A4D7D2F02263B35400FCF085 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		A4D7D2F22263BB1400FCF085 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyVC.swift; sourceTree = "<group>"; };
 		A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVC.swift; sourceTree = "<group>"; };
 		A4E6BBF5225A66E600D5727B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 				A438597D2253655300A3F3E4 /* Assets.xcassets */,
 				A438597F2253655300A3F3E4 /* LaunchScreen.storyboard */,
 				A43859822253655300A3F3E4 /* Info.plist */,
+				A4D7D2EF2263B35400FCF085 /* DataModel.xcdatamodeld */,
 			);
 			path = Minesweeper;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 				A43859782253654D00A3F3E4 /* WelcomeVC.swift */,
 				A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */,
 				A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */,
+				A4D7D2F22263BB1400FCF085 /* TableVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,7 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D7D2F32263BB1400FCF085 /* TableVC.swift in Sources */,
 				A43859792253654D00A3F3E4 /* WelcomeVC.swift in Sources */,
+				A4D7D2F12263B35400FCF085 /* DataModel.xcdatamodeld in Sources */,
 				A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */,
 				A4E5BBDA225CD868001743C4 /* GameBoardVC.swift in Sources */,
 				A4BA984D225B683000CD7704 /* MineField.swift in Sources */,
@@ -388,6 +396,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A4D7D2EF2263B35400FCF085 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A4D7D2F02263B35400FCF085 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = A4D7D2F02263B35400FCF085 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A438596B2253654D00A3F3E4 /* Project object */;
 }
