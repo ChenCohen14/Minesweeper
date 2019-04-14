@@ -30,5 +30,6 @@ class DifficultyVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let gameBoardVC = segue.destination as! GameBoardVC
         gameBoardVC.level = level
+        gameBoardVC.userName = name
     }
 }

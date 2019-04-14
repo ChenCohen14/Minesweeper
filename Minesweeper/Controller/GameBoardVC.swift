@@ -26,11 +26,11 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var gameOver = false
     var gameManager : GameManager!
     var imageCells:[ImageCollectionViewCell]=[]
-    
+    var minesLeft = 0
+    var userName = " "
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imagesCollection.dataSource = self
         imagesCollection.delegate = self
         
@@ -53,6 +53,10 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         var theLevel = Difficulty.getDifficultyBy(difficultyname: level)
         self.gameManager = GameManager(level: theLevel)
         
+        minesLeft = gameManager.getBoard().getMineNum()
+        minesLabel.text = "\(minesLeft)"
+        userNameLabel.text = userName
+
         
     }
     
@@ -76,7 +80,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         gameManager.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
         gameOver = gameManager.isGameOver
-        let cell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
+        let imageCell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
         //        if(isFlag){
         //            cell.imageName = "flag"
         //            cell.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
@@ -89,8 +93,14 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // cell.changeImage()
         var position = indexPath.section*gameManager.getBoard().getCols()+indexPath.row
         var logicCell = gameManager.getBoard().gameGrid[position]
-        if (cell.isFlag == true && logicCell.isFlagged() == true){
+        if (imageCell.isFlag == true && logicCell.isFlagged() == true){ // if cell is already flagged don't update the UI
             return
+        }
+        else if (imageCell.isFlag == false && logicCell.isFlagged() == true){
+            minesLeft -= 1
+        }
+        else if (imageCell.isFlag == true && logicCell.isFlagged() == false){
+            minesLeft += 1
         }
         updateUI()
         imagesCollection.reloadItems(at: [indexPath])
@@ -115,7 +125,6 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             for col in 0..<gameManager.getBoard().getCols(){
                 var cell = gameManager.getBoard().getCell(row: row, col: col)
                 var imageCell = imageCells[(row*gameManager.getBoard().getCols())+col]
-               
                 
                 print("\(row)" + "\(col)")
                 print("\(cell.flagged)")
@@ -131,13 +140,10 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     imageCell.covered = cell.isCovered()
                 }
                 imageCell.changeImage()
-                
-                
-                
-                
+
             }
         }
-        
+        minesLabel.text = "\(minesLeft)"
     }
     
     
