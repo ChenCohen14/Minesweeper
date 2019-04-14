@@ -94,10 +94,11 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 [weak self] timer in
                 self!.counter+=1
                 self!.timeLabel.text = "\(self!.counter)"
-                if self!.gameManager.checkIsGameOver()
+                if self!.gameManager.checkIsGameOver() || self!.gameManager.isWinning()
                 {
+                    var message = self!.gameManager.checkIsGameOver() ? "You Lose" : "You Win!"
                     timer.invalidate()
-                    let alert = UIAlertController(title: "Minesweeper Game", message: "You Lose", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Minesweeper Game", message: message, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default)
                     {
                         [weak self] action in
