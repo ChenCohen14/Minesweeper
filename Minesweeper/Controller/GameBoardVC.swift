@@ -12,6 +12,12 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     
     @IBOutlet weak var imagesCollection : UICollectionView!
+    
+    @IBOutlet weak var minesLabel: UILabel!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!

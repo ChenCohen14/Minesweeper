@@ -15,6 +15,11 @@ class WelcomeVC: UIViewController {
     
     var name = ""
     
+    override func viewDidLoad() {
+        userName.placeholder = "Enter your name"
+        userName.resignFirstResponder()
+    }
+    
     
     
 
@@ -22,6 +27,10 @@ class WelcomeVC: UIViewController {
         let difficultyVC = segue.destination as! DifficultyVC
         name = userName.text!
         difficultyVC.name = name
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 
