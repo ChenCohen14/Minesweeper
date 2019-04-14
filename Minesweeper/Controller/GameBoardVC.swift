@@ -33,8 +33,12 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         screenHeight = screenSize.height
         
         // Do any additional setup after loading the view, typically from a nib.
+        var space = 0
+        if level == "Easy"{
+            space = 70
+        }
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: CGFloat(space), bottom: 0, right: 0)
         layout.itemSize = CGSize(width: 25, height: 25)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
