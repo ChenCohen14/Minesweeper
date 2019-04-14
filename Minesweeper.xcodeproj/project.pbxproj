@@ -18,8 +18,6 @@
 		A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9854225BBD6400CD7704 /* Difficulty.swift */; };
 		A4D7D2F12263B35400FCF085 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2EF2263B35400FCF085 /* DataModel.xcdatamodeld */; };
 		A4D7D2F32263BB1400FCF085 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2F22263BB1400FCF085 /* HighScoreViewController.swift */; };
-		A4D7D2F82263C44200FCF085 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2F62263C44200FCF085 /* User+CoreDataClass.swift */; };
-		A4D7D2F92263C44200FCF085 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2F72263C44200FCF085 /* User+CoreDataProperties.swift */; };
 		A4D7D2FB2263D61D00FCF085 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2FA2263D61D00FCF085 /* Score.swift */; };
 		A4D7D2FD2263DD5F00FCF085 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7D2FC2263DD5F00FCF085 /* ScoreTableViewCell.swift */; };
 		A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */; };
@@ -41,8 +39,6 @@
 		A4BA9854225BBD6400CD7704 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		A4D7D2F02263B35400FCF085 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A4D7D2F22263BB1400FCF085 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
-		A4D7D2F62263C44200FCF085 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A4D7D2F72263C44200FCF085 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4D7D2FA2263D61D00FCF085 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A4D7D2FC2263DD5F00FCF085 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyVC.swift; sourceTree = "<group>"; };
@@ -80,8 +76,6 @@
 		A43859752253654D00A3F3E4 /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
-				A4D7D2F62263C44200FCF085 /* User+CoreDataClass.swift */,
-				A4D7D2F72263C44200FCF085 /* User+CoreDataProperties.swift */,
 				A4E5BBD6225CB6F3001743C4 /* Controller */,
 				A4E5BBD4225CB6C1001743C4 /* View */,
 				A43859762253654D00A3F3E4 /* AppDelegate.swift */,
@@ -200,7 +194,6 @@
 			files = (
 				A4D7D2F32263BB1400FCF085 /* HighScoreViewController.swift in Sources */,
 				A43859792253654D00A3F3E4 /* WelcomeVC.swift in Sources */,
-				A4D7D2F82263C44200FCF085 /* User+CoreDataClass.swift in Sources */,
 				A4D7D2FB2263D61D00FCF085 /* Score.swift in Sources */,
 				A4D7D2F12263B35400FCF085 /* DataModel.xcdatamodeld in Sources */,
 				A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */,
@@ -209,7 +202,6 @@
 				A4BA984B225B454300CD7704 /* Cell.swift in Sources */,
 				A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */,
 				A4D7D2FD2263DD5F00FCF085 /* ScoreTableViewCell.swift in Sources */,
-				A4D7D2F92263C44200FCF085 /* User+CoreDataProperties.swift in Sources */,
 				A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */,
 				A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */,
 				A4E6BBF6225A66E600D5727B /* ImageCollectionViewCell.swift in Sources */,
