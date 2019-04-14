@@ -13,7 +13,7 @@ class WelcomeVC: UIViewController {
   
     @IBOutlet weak var userName: UITextField!
     
-    var name = ""
+    var name = " "
     
     override func viewDidLoad() {
         userName.placeholder = "Enter your name"
@@ -24,9 +24,14 @@ class WelcomeVC: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let button: UIButton = sender as! UIButton
+        if button.currentTitle == "Play"
+        {
         let difficultyVC = segue.destination as! DifficultyVC
         name = userName.text!
         difficultyVC.name = name
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
