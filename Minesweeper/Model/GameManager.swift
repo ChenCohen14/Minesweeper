@@ -13,7 +13,6 @@ import Foundation
 class GameManager {
     
     var board: MineField
-    var time:Timer
     //  var highScore: HighScore
     var mineLeft: Int
     var firstMove: Bool
@@ -33,7 +32,6 @@ class GameManager {
         self.board = MineField(rows: rows, cols: cols, mineNum: mines)
         
         self.mineLeft=board.getMineNum()
-        self.time=Timer()
         self.firstMove=true
         self.isGameOver = false
         self.allBoardIsMined=false
@@ -84,8 +82,6 @@ class GameManager {
     func gameMove( row: Int, col: Int,flag: Bool) -> Bool{
         
         if (firstMove) {
-            //init timer - turn on ticks
-            time.setTimerOn(timerOn: true)
             
             //turn off the first game move flag
             self.firstMove=false
@@ -142,10 +138,7 @@ class GameManager {
         return mineLeft;
     }
     
-    func getTime() -> Timer {
-        return time;
-    }
-    
+
     //    func getHighScore() -> HighScore {
     //        return highScore;
     //    }

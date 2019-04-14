@@ -15,7 +15,6 @@
 		A4BA984B225B454300CD7704 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984A225B454300CD7704 /* Cell.swift */; };
 		A4BA984D225B683000CD7704 /* MineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984C225B683000CD7704 /* MineField.swift */; };
 		A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA984E225BA48400CD7704 /* GameManager.swift */; };
-		A4BA9851225BAB0000CD7704 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9850225BAB0000CD7704 /* Timer.swift */; };
 		A4BA9855225BBD6400CD7704 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BA9854225BBD6400CD7704 /* Difficulty.swift */; };
 		A4E5BBD8225CBF95001743C4 /* DifficultyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */; };
 		A4E5BBDA225CD868001743C4 /* GameBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */; };
@@ -33,7 +32,6 @@
 		A4BA984A225B454300CD7704 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		A4BA984C225B683000CD7704 /* MineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineField.swift; sourceTree = "<group>"; };
 		A4BA984E225BA48400CD7704 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		A4BA9850225BAB0000CD7704 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		A4BA9854225BBD6400CD7704 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyVC.swift; sourceTree = "<group>"; };
 		A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVC.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				A4BA984C225B683000CD7704 /* MineField.swift */,
 				A4BA984E225BA48400CD7704 /* GameManager.swift */,
 				A4BA9854225BBD6400CD7704 /* Difficulty.swift */,
-				A4BA9850225BAB0000CD7704 /* Timer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,7 +182,6 @@
 			files = (
 				A43859792253654D00A3F3E4 /* WelcomeVC.swift in Sources */,
 				A4BA984F225BA48400CD7704 /* GameManager.swift in Sources */,
-				A4BA9851225BAB0000CD7704 /* Timer.swift in Sources */,
 				A4E5BBDA225CD868001743C4 /* GameBoardVC.swift in Sources */,
 				A4BA984D225B683000CD7704 /* MineField.swift in Sources */,
 				A4BA984B225B454300CD7704 /* Cell.swift in Sources */,

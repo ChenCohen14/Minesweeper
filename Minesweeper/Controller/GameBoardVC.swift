@@ -18,6 +18,9 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var userNameLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
+    var timer = Timer()
+    var counter = 0
+    var startTimer = false
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
@@ -56,7 +59,10 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         minesLeft = gameManager.getBoard().getMineNum()
         minesLabel.text = "\(minesLeft)"
         userNameLabel.text = userName
-
+        
+        
+        
+        
         
     }
     
@@ -81,16 +87,28 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         gameManager.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
         gameOver = gameManager.isGameOver
         let imageCell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
-        //        if(isFlag){
-        //            cell.imageName = "flag"
-        //            cell.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        //        }
-        //        else{
-        //            cell.backgroundColor = #colorLiteral(red: 0.2404436574, green: 1, blue: 0.1474604859, alpha: 1)
-        //            cell.imageName = "cell"
-        //        }
-        //   imagesCollection.reloadItems(at: [indexPath])
-        // cell.changeImage()
+        if !startTimer{
+            startTimer = true
+            self.timer=Timer.scheduledTimer(withTimeInterval: 1, repeats: true)
+            {
+                [weak self] timer in
+                self!.counter+=1
+                self!.timeLabel.text = "\(self!.counter)"
+                if self!.gameManager.checkIsGameOver()
+                {
+                    timer.invalidate()
+                    let alert = UIAlertController(title: "Minesweeper Game", message: "You Lose", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default)
+                    {
+                        [weak self] action in
+                        self?.navigationController?.dismiss(animated: true)
+                    })
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        
         var position = indexPath.section*gameManager.getBoard().getCols()+indexPath.row
         var logicCell = gameManager.getBoard().gameGrid[position]
         if (imageCell.isFlag == true && logicCell.isFlagged() == true){ // if cell is already flagged don't update the UI
@@ -129,7 +147,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 print("\(row)" + "\(col)")
                 print("\(cell.flagged)")
                 print(imageCell.isFlag)
-           
+                
                 imageCell.isFlag = cell.flagged
                 imageCell.number = "\(cell.getValue())"
                 if(gameOver){
@@ -140,10 +158,22 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     imageCell.covered = cell.isCovered()
                 }
                 imageCell.changeImage()
-
+                
             }
         }
         minesLabel.text = "\(minesLeft)"
+    }
+    
+
+    
+    
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.timer.invalidate()
+        imagesCollection.delegate=nil
+        imagesCollection.dataSource=nil
     }
     
     
