@@ -138,16 +138,6 @@ class GameManager {
         return mineLeft;
     }
     
-
-    //    func getHighScore() -> HighScore {
-    //        return highScore;
-    //    }
-    //
-    //    //sets the game high score record - player name, ticks from the timer, and the level
-    //    func setHighScore(Context context) -> Void {
-    //        this.highScore = new HighScore(time.getTicks(),level,context);
-    //    }
-    
     //check if board is all mined
     func isAllBoardIsMined() -> Bool {
         if((board.getMineNum() == board.getRows()*board.getCols())) {

@@ -263,8 +263,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVp-is-s0F">
-                                <rect key="frame" x="166" y="88" width="64" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVp-is-s0F">
+                                <rect key="frame" x="16" y="88" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⏱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILP-Vu-slG">
+                                <rect key="frame" x="48" y="106" width="28" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="💣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4i-fq-SWv">
+                                <rect key="frame" x="289" y="106" width="28" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -317,7 +331,7 @@
         <!--High Score View Controller-->
         <scene sceneID="w9n-SI-HbA">
             <objects>
-                <viewController id="JDF-wX-ckp" customClass="HighScoreViewController" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JDF-wX-ckp" customClass="HighScoreViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="irx-ir-xuJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,7 +342,7 @@
                                 <color key="separatorColor" red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexColor" red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Score Cell" id="hw3-dv-5zP" customClass="ScoreTableViewCell" customModule="MemoryGame" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Score Cell" id="hw3-dv-5zP" customClass="ScoreTableViewCell" customModule="Minesweeper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hw3-dv-5zP" id="bFR-iN-qog">

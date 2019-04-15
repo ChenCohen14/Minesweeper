@@ -53,7 +53,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         layout.minimumLineSpacing = 0
         imagesCollection.collectionViewLayout = layout
         
-        var theLevel = Difficulty.getDifficultyBy(difficultyname: level)
+        let theLevel = Difficulty.getDifficultyBy(difficultyname: level)
         self.gameManager = GameManager(level: theLevel)
         
         minesLeft = gameManager.getBoard().getMineNum()
@@ -84,8 +84,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        gameManager.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
-        gameOver = gameManager.isGameOver
+        gameOver = !gameManager.gameMove(row: indexPath.section, col: indexPath.row, flag: isFlag)
         let imageCell=collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
         if !startTimer{
             startTimer = true
@@ -96,7 +95,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 self!.timeLabel.text = "\(self!.counter)"
                 if self!.gameManager.checkIsGameOver() || self!.gameManager.isWinning()
                 {
-                    var message = self!.gameManager.isWinning() ? "You Win!" : "You Lose"
+                    let message = self!.gameManager.isWinning() ? "You Win!" : "You Lose"
                     timer.invalidate()
                     if self!.gameManager.isWinning(){
                         let score = Score(name: self!.userName, time: self!.counter)
@@ -108,7 +107,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     alert.addAction(UIAlertAction(title: "OK", style: .default)
                     {
                         [weak self] action in
-                        self?.navigationController?.dismiss(animated: true)
+                        self?.navigationController?.popViewController(animated: true)
                     })
                     self?.present(alert, animated: true, completion: nil)
                 }
@@ -116,8 +115,8 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         
         
-        var position = indexPath.section*gameManager.getBoard().getCols()+indexPath.row
-        var logicCell = gameManager.getBoard().gameGrid[position]
+        let position = indexPath.section*gameManager.getBoard().getCols()+indexPath.row
+        let logicCell = gameManager.getBoard().gameGrid[position]
         if (imageCell.isFlag == true && logicCell.isFlagged() == true){ // if cell is already flagged don't update the UI
             return
         }
@@ -128,7 +127,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             minesLeft += 1
         }
         updateUI()
-        imagesCollection.reloadItems(at: [indexPath])
+        imagesCollection.reloadInputViews()
         
         
     }
@@ -148,18 +147,15 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func updateUI(){
         for row in 0..<gameManager.getBoard().getRows(){
             for col in 0..<gameManager.getBoard().getCols(){
-                var cell = gameManager.getBoard().getCell(row: row, col: col)
-                var imageCell = imageCells[(row*gameManager.getBoard().getCols())+col]
+                let cell = gameManager.getBoard().getCell(row: row, col: col)
+                let imageCell = imageCells[(row*gameManager.getBoard().getCols())+col]
                 
-                print("\(row)" + "\(col)")
-                print("\(cell.flagged)")
-                print(imageCell.isFlag)
+          
                 
                 imageCell.isFlag = cell.flagged
                 imageCell.number = "\(cell.getValue())"
                 if(gameOver){
                     imageCell.covered = false
-                    // TODO: the flag sign doesnt work well
                 }
                 else{
                     imageCell.covered = cell.isCovered()

@@ -15,16 +15,13 @@ class DifficultyVC: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print(name)
-        
+        super.viewDidLoad()        
     }
     
  
 
     @IBAction func levelBtPressed(_ sender: UIButton) {
         level = sender.titleLabel!.text!
-       // performSegue(withIdentifier: "GameBoardVC", sender: self)
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

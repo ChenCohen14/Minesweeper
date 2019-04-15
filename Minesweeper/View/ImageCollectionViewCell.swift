@@ -19,18 +19,24 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     
     func changeImage(){
-   
+        
         if(!covered){
-            //self.imageCell.removeFromSuperview()
-            self.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             if number == "\(Cell.MINE_VALUE)"{
                 imageName = "bomb"
             }
             else{
-            hintNumber.text = number
+                if number == "0"
+                {
+                    number = ""
+                }
+                hintNumber.text = number
+                imageName = "gray"
+                
             }
             self.isUserInteractionEnabled = false
-
+            
+            
+            
         }
         else if(isFlag){
             imageName = "flag"
@@ -40,10 +46,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
             self.backgroundColor = #colorLiteral(red: 0.2404436574, green: 1, blue: 0.1474604859, alpha: 1)
             imageName = "cell"
         }
-
+        
+        
         imageCell.image = UIImage(named: imageName)
-     
-
+        
+        
     }
- 
+    
 }

@@ -1,5 +1,5 @@
 //
-//  TableVC.swift
+//  HighScoreViewController.swift
 //  Minesweeper
 //
 //  Created by Chen Cohen on 14/04/2019.
