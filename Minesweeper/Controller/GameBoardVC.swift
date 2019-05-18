@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAConfettiView
 
 class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -96,6 +97,12 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 if self!.gameManager.checkIsGameOver() || self!.gameManager.isWinning()
                 {
                     let message = self!.gameManager.isWinning() ? "You Win!" : "You Lose"
+                    if message == "You Win!"{
+                        let confettiView = SAConfettiView(frame: (self?.view.bounds)!)
+                        confettiView.type = .Diamond
+                        self?.view.addSubview(confettiView)
+                        confettiView.startConfetti()
+                    }
                     timer.invalidate()
                     if self!.gameManager.isWinning(){
                         let score = Score(name: self!.userName, time: self!.counter)

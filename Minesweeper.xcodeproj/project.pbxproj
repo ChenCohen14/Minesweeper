@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A97ECB22687DC5B10FC2EAF /* Pods_Minesweeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99485F07E6D1C914FDFCE074 /* Pods_Minesweeper.framework */; };
+		A42AFD92229058B000D978B4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A42AFD91229058B000D978B4 /* Podfile */; };
 		A43859772253654D00A3F3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859762253654D00A3F3E4 /* AppDelegate.swift */; };
 		A43859792253654D00A3F3E4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43859782253654D00A3F3E4 /* WelcomeVC.swift */; };
 		A438597C2253654D00A3F3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A438597A2253654D00A3F3E4 /* Main.storyboard */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2FD4428125CCF303638314 /* Pods-Minesweeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Minesweeper.release.xcconfig"; path = "Target Support Files/Pods-Minesweeper/Pods-Minesweeper.release.xcconfig"; sourceTree = "<group>"; };
+		99485F07E6D1C914FDFCE074 /* Pods_Minesweeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Minesweeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A42AFD91229058B000D978B4 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		A43859732253654D00A3F3E4 /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43859762253654D00A3F3E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A43859782253654D00A3F3E4 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		A4E5BBD7225CBF95001743C4 /* DifficultyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyVC.swift; sourceTree = "<group>"; };
 		A4E5BBD9225CD868001743C4 /* GameBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVC.swift; sourceTree = "<group>"; };
 		A4E6BBF5225A66E600D5727B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E6C8FC87321F67EB8673B6FF /* Pods-Minesweeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Minesweeper.debug.xcconfig"; path = "Target Support Files/Pods-Minesweeper/Pods-Minesweeper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +55,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A97ECB22687DC5B10FC2EAF /* Pods_Minesweeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61124A9F454B90CA0F6F8C0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99485F07E6D1C914FDFCE074 /* Pods_Minesweeper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6608793512ED3E8B764BDE27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6C8FC87321F67EB8673B6FF /* Pods-Minesweeper.debug.xcconfig */,
+				0E2FD4428125CCF303638314 /* Pods-Minesweeper.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A438596A2253654D00A3F3E4 = {
 			isa = PBXGroup;
 			children = (
+				A42AFD91229058B000D978B4 /* Podfile */,
 				A43859752253654D00A3F3E4 /* Minesweeper */,
 				A43859742253654D00A3F3E4 /* Products */,
+				6608793512ED3E8B764BDE27 /* Pods */,
+				61124A9F454B90CA0F6F8C0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A43859852253655300A3F3E4 /* Build configuration list for PBXNativeTarget "Minesweeper" */;
 			buildPhases = (
+				93E55C3E186CA84D5C261FE2 /* [CP] Check Pods Manifest.lock */,
 				A438596F2253654D00A3F3E4 /* Sources */,
 				A43859702253654D00A3F3E4 /* Frameworks */,
 				A43859712253654D00A3F3E4 /* Resources */,
+				E7970FCE6DC25FF80884076B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,11 +208,59 @@
 			files = (
 				A43859812253655300A3F3E4 /* LaunchScreen.storyboard in Resources */,
 				A438597E2253655300A3F3E4 /* Assets.xcassets in Resources */,
+				A42AFD92229058B000D978B4 /* Podfile in Resources */,
 				A438597C2253654D00A3F3E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93E55C3E186CA84D5C261FE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Minesweeper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7970FCE6DC25FF80884076B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Minesweeper/Pods-Minesweeper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Minesweeper/Pods-Minesweeper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A438596F2253654D00A3F3E4 /* Sources */ = {
@@ -344,6 +422,7 @@
 		};
 		A43859862253655300A3F3E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C8FC87321F67EB8673B6FF /* Pods-Minesweeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -362,6 +441,7 @@
 		};
 		A43859872253655300A3F3E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2FD4428125CCF303638314 /* Pods-Minesweeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
