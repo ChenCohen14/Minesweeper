@@ -28,7 +28,7 @@ class WelcomeVC: UIViewController {
         if button.currentTitle == "Play"
         {
         let difficultyVC = segue.destination as! DifficultyVC
-        name = userName.text!
+        name = userName.text ?? ""
         difficultyVC.name = name
         }
         
