@@ -8,6 +8,7 @@
 
 import UIKit
 import SAConfettiView
+import GameplayKit
 
 class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -102,6 +103,14 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                         confettiView.type = .Diamond
                         self?.view.addSubview(confettiView)
                         confettiView.startConfetti()
+                    }
+                    else {
+                        let upperBound = self!.gameManager.getBoard().getCols() * self!.gameManager.getBoard().getRows()
+                        let randomSource = GKRandomSource.sharedRandom()
+                        self?.imagesCollection.visibleCells.forEach { cell in
+                            let index = randomSource.nextInt(upperBound: upperBound) // returns random Int between 0 and numOfCells
+                            (cell as? ImageCollectionViewCell)?.fallDown(duration: Double(index) / 100.0 + 1.0)
+                        }
                     }
                     timer.invalidate()
                     if self!.gameManager.isWinning(){

@@ -19,7 +19,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     
     func changeImage(){
-        
         if(!covered){
             if number == "\(Cell.MINE_VALUE)"{
                 imageName = "bomb"
@@ -52,5 +51,15 @@ class ImageCollectionViewCell: UICollectionViewCell {
         
         
     }
+    
+    
+    
+    func fallDown(duration: Double) {
+        UIView.animate(withDuration: duration) {
+            self.frame.origin.y = 800
+        }
+    }
+    
+    
     
 }
