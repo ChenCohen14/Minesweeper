@@ -114,7 +114,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     }
                     timer.invalidate()
                     if self!.gameManager.isWinning(){
-                        let score = Score(name: self!.userName, time: self!.counter)
+                        let score = Score(level:self!.level,name: self!.userName, time: self!.counter)
                         Score.save(score: score)
                     }
                             

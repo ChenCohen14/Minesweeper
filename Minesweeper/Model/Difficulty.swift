@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Difficulty {
+enum Difficulty: String {
     case Easy
     case Medium
     case Hard
@@ -16,7 +16,7 @@ enum Difficulty {
     func getSecRow() -> (Int,Int,Int) {
         switch self {
         case .Easy:
-            return (5,5,5)
+            return (5,5,1)
         case .Medium:
             return (10,10,20)
         case .Hard:

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WelcomeVC: UIViewController {
 
@@ -14,10 +15,13 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var userName: UITextField!
     
     var name = " "
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         userName.placeholder = "Enter your name"
         userName.resignFirstResponder()
+        checkLocationServices()
+
     }
     
     
@@ -41,6 +45,38 @@ class WelcomeVC: UIViewController {
 
     
 
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            checkLocationAuthorization()
+        } else {
+            // Show alert letting the user know they have to turn this on.
+        }
+    }
+    
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            break
+        case .denied:
+            // Show alert instructing them how to turn on permissions
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // Show an alert letting them know what's up
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
     
 }
 
+extension WelcomeVC: CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
+}
