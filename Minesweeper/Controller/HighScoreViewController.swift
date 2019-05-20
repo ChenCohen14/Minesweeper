@@ -22,6 +22,8 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
     let regionInMeters: Double = 10000
     
     
+    static var difficulty: Difficulty = Difficulty.Easy
+    
     var scoresDictionary:[Difficulty:[Score]]?
     
     override func viewDidLoad() {
@@ -30,7 +32,7 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
         self.scoreTableView.tableFooterView = UIView()
         if let scoresArray = Score.loadFromDisk() {
             self.scoresDictionary = [:]
-            self.scoresDictionary?[Difficulty.Easy] = scoresArray.filter( { $0.level == Difficulty.Easy.rawValue } )
+            self.scoresDictionary?[HighScoreViewController.difficulty] = scoresArray.filter( { $0.level == Difficulty.Easy.rawValue } )
             self.scoresDictionary?[Difficulty.Medium] = scoresArray.filter({ (score) -> Bool in
                 if score.level == Difficulty.Medium.rawValue {
                     return true
@@ -50,14 +52,30 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     }
     
+    
+
+    @IBAction func btPressed(_ sender: UIButton) {
+       if let title = sender.titleLabel?.text{
+            if title == "Easy"{
+                HighScoreViewController.difficulty = Difficulty.Easy
+            }else if title == "Medium"{
+                HighScoreViewController.difficulty = Difficulty.Medium
+            }else if title == "Hard"{
+                HighScoreViewController.difficulty = Difficulty.Hard
+            }
+        print(title)
+        scoreTableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return scoresDictionary?[Difficulty.Easy]?.count ?? 0
+        return scoresDictionary?[HighScoreViewController.difficulty]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Score Cell") as! ScoreTableViewCell
-        cell.nameLabel.text = scoresDictionary?[Difficulty.Easy]?[indexPath.row].name
-        cell.timeLabel.text = "\(scoresDictionary?[Difficulty.Easy]?[indexPath.row].time ?? -1)s"
+        cell.nameLabel.text = scoresDictionary?[HighScoreViewController.difficulty]?[indexPath.row].name
+        cell.timeLabel.text = "\(scoresDictionary?[HighScoreViewController.difficulty]?[indexPath.row].time ?? -1)s"
         cell.rankLabel.text = "\(indexPath.row + 1)."
         return cell
     }
