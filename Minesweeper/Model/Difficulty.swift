@@ -18,9 +18,9 @@ enum Difficulty: String {
         case .Easy:
             return (5,5,1)
         case .Medium:
-            return (10,10,20)
+            return (10,10,1)
         case .Hard:
-            return (10,10,30)
+            return (10,10,1)
         }
     }
     static func getDifficultyBy(difficultyname:String)->Difficulty{
