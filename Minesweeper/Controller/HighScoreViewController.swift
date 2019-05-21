@@ -22,31 +22,19 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
     let regionInMeters: Double = 10000
     
     
-    static var difficulty: Difficulty = Difficulty.Easy
+    static var difficulty = "Easy"
     
-    var scoresDictionary:[Difficulty:[Score]]?
+    var scoresDictionary:[String:[Score]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scoreTableView.rowHeight = 35
         self.scoreTableView.tableFooterView = UIView()
-        if let scoresArray = Score.loadFromDisk() {
-            self.scoresDictionary = [:]
-            self.scoresDictionary?[HighScoreViewController.difficulty] = scoresArray.filter( { $0.level == Difficulty.Easy.rawValue } )
-            self.scoresDictionary?[Difficulty.Medium] = scoresArray.filter({ (score) -> Bool in
-                if score.level == Difficulty.Medium.rawValue {
-                    return true
-                } else {
-                    return false
-                }
-            })
-            self.scoresDictionary?[Difficulty.Hard] = scoresArray.filter( { $0.level == Difficulty.Hard.rawValue } )
-
-        }
-        if scoresDictionary != nil{
+        scoresDictionary = Score.loadFromDisk() 
+       // if scoresDictionary != nil{
             scoreTableView.delegate = self
             scoreTableView.dataSource = self
-        }
+      //  }
         
         checkLocationServices()
 
@@ -56,16 +44,14 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     @IBAction func btPressed(_ sender: UIButton) {
        if let title = sender.titleLabel?.text{
-            if title == "Easy"{
-                HighScoreViewController.difficulty = Difficulty.Easy
-            }else if title == "Medium"{
-                HighScoreViewController.difficulty = Difficulty.Medium
-            }else if title == "Hard"{
-                HighScoreViewController.difficulty = Difficulty.Hard
-            }
-        print(title)
-        scoreTableView.reloadData()
+            HighScoreViewController.difficulty = title
+        for (key, value) in scoresDictionary! {
+            print("\(key) -> \(value)")
         }
+        //scoreTableView.reloadData()
+       DispatchQueue.main.async { self.scoreTableView.reloadData() }
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

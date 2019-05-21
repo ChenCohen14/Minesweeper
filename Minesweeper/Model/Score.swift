@@ -23,7 +23,7 @@ class Score :NSObject,NSCoding {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        guard let level = aDecoder.decodeObject(forKey: "level") as? String, let name = aDecoder.decodeObject(forKey: "name") as? String, let time = aDecoder.decodeObject(forKey: "time") as? String else { return nil }
+        guard let level = (aDecoder.decodeObject(forKey: "level") as? String), let name = aDecoder.decodeObject(forKey: "name") as? String, let time = aDecoder.decodeObject(forKey: "time") as? String else { return nil }
         self.level = level
         self.name = name
         self.time = Int(time)!
@@ -35,8 +35,8 @@ class Score :NSObject,NSCoding {
         self.time = time
     }
     
-    static func loadFromDisk() -> [Score]?{
-        if let data = UserDefaults.standard.object(forKey: RECORDS_NAME_FILE) as? Data, let scores = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Score]
+    static func loadFromDisk() -> [String:[Score]]?{
+        if let data = UserDefaults.standard.object(forKey: RECORDS_NAME_FILE) as? Data, let scores = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String:[Score]]
         {
             return scores
         }
@@ -44,27 +44,33 @@ class Score :NSObject,NSCoding {
     }
     
     static func save(score:Score){
-        var scores:[Score]? = loadFromDisk()
-        if scores != nil {
-            scores?.append(score)
-            scores?.sort{$0.time < $1.time}
-            
+        var scores:[String:[Score]]? = loadFromDisk()
+        if scores != nil{
+            if scores?[score.level] != nil {
+                    scores?[score.level]?.append(score)
+                    scores?[score.level]?.sort{$0.time < $1.time}
+            }
+            else{
+                scores?.updateValue([score], forKey: score.level)
+            }
         }
         else
         {
-            scores = [score]
+            
+            scores = [score.level:[score]]
         }
-        saveToFile(scores: scores!)
+        saveToFile(scores: scores!, difficulty: score.level)
     }
     
-    static func saveToFile(scores:[Score]){
+    static func saveToFile(scores:[String:[Score]], difficulty:String){
         var tempScores = scores
-        if scores.count > 10
+        if scores[difficulty]?.count != nil , scores[difficulty]!.count > 10
         {
-            tempScores.remove(at: scores.count-1)
+            tempScores[difficulty]!.remove(at: scores[difficulty]!.count-1)
         }
         let data = NSKeyedArchiver.archivedData(withRootObject: tempScores)
         UserDefaults.standard.set(data, forKey: RECORDS_NAME_FILE)
+   
     }
     
     
