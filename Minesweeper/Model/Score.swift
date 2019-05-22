@@ -8,11 +8,15 @@
 
 
 import Foundation
+import CoreLocation
 
 class Score :NSObject,NSCoding {
     var level: String
     var name:String
     var time:Int
+    var latitude: Double
+    var longitude: Double
+
     static let RECORDS_NAME_FILE = "records"
 
     
@@ -20,19 +24,29 @@ class Score :NSObject,NSCoding {
         aCoder.encode(self.level, forKey: "level")
         aCoder.encode(self.name, forKey: "name")
         aCoder.encode("\(self.time)", forKey: "time")
+        aCoder.encode("\(self.latitude)", forKey: "latitude")
+        aCoder.encode("\(self.longitude)", forKey: "longitude")
+
+
     }
     
     required init?(coder aDecoder: NSCoder) {
-        guard let level = (aDecoder.decodeObject(forKey: "level") as? String), let name = aDecoder.decodeObject(forKey: "name") as? String, let time = aDecoder.decodeObject(forKey: "time") as? String else { return nil }
+        guard let level = (aDecoder.decodeObject(forKey: "level") as? String), let name = aDecoder.decodeObject(forKey: "name") as? String, let time = aDecoder.decodeObject(forKey: "time") as? String, let latitude = aDecoder.decodeObject(forKey: "latitude") as? String, let longitude = aDecoder.decodeObject(forKey: "longitude") as? String else { return nil }
         self.level = level
         self.name = name
-        self.time = Int(time)!
+        self.time = Int(time) ?? -1
+        self.latitude = Double(latitude) ?? 0
+        self.longitude = Double(longitude) ?? 0
+
     }
     
-    init(level:String,name:String,time:Int) {
+    init(level:String,name:String,time:Int, latitude: Double, longitude: Double) {
         self.level = level
         self.name = name
         self.time = time
+        self.latitude = latitude
+        self.longitude = longitude
+
     }
     
     static func loadFromDisk() -> [String:[Score]]?{

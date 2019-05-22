@@ -9,6 +9,8 @@
 import UIKit
 import SAConfettiView
 import GameplayKit
+import CoreLocation
+
 
 class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -33,6 +35,8 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var imageCells:[ImageCollectionViewCell]=[]
     var minesLeft = 0
     var userName = " "
+    let locationManager = CLLocationManager()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +118,10 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     }
                     timer.invalidate()
                     if self!.gameManager.isWinning(){
-                        let score = Score(level:self!.level,name: self!.userName, time: self!.counter)
+                        let latitude = self?.locationManager.location?.coordinate.latitude ?? 0
+                        let longitude = self?.locationManager.location?.coordinate.longitude ?? 0
+
+                        let score = Score(level:self!.level,name: self!.userName, time: self!.counter, latitude: latitude, longitude: longitude)
                         Score.save(score: score)
                     }
                             

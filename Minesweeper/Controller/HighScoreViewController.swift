@@ -37,6 +37,7 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
       //  }
         
         checkLocationServices()
+        findUserLocationAndDropPin()
 
     }
     
@@ -45,14 +46,40 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBAction func btPressed(_ sender: UIButton) {
        if let title = sender.titleLabel?.text{
             HighScoreViewController.difficulty = title
-        for (key, value) in scoresDictionary! {
-            print("\(key) -> \(value)")
-        }
+       
         //scoreTableView.reloadData()
+        removeAnottations()
+        findUserLocationAndDropPin()
        DispatchQueue.main.async { self.scoreTableView.reloadData() }
         }
         
     }
+    
+    func removeAnottations(){
+       var annotations = self.mapView.annotations
+            for _annotation in annotations {
+                if let annotation = _annotation as? MKAnnotation{
+                    self.mapView.removeAnnotation(annotation)
+                }
+        }
+    }
+    
+     func findUserLocationAndDropPin() {
+        var pinForUserLocation = MKPointAnnotation()
+        if scoresDictionary?[HighScoreViewController.difficulty] != nil {
+            for i in 0..<scoresDictionary![HighScoreViewController.difficulty]!.count{
+                let latitude = scoresDictionary![HighScoreViewController.difficulty]![i].latitude
+                let longitude = scoresDictionary![HighScoreViewController.difficulty]![i].longitude
+                let userLocationCoordinates = CLLocationCoordinate2DMake(latitude, longitude)
+                pinForUserLocation.coordinate = userLocationCoordinates
+                pinForUserLocation.title =  scoresDictionary![HighScoreViewController.difficulty]![i].name
+                mapView.addAnnotation(pinForUserLocation)
+            }
+        
+        mapView.showAnnotations([pinForUserLocation], animated: true)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return scoresDictionary?[HighScoreViewController.difficulty]?.count ?? 0
