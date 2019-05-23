@@ -77,6 +77,7 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
                 var pinForUserLocation = MKPointAnnotation()
                 pinForUserLocation.coordinate = userLocationCoordinates
                 pinForUserLocation.title =  scoresDictionary![HighScoreViewController.difficulty]![i].name
+                pinForUserLocation.subtitle = "\(scoresDictionary![HighScoreViewController.difficulty]![i].time)s"
                 mapView.addAnnotation(pinForUserLocation)
                 mapView.showAnnotations([pinForUserLocation], animated: true)
 

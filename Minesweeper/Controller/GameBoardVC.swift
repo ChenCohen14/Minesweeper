@@ -138,7 +138,10 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     {
                         [weak self] action in
                     
-                        self?.navigationController?.popViewController(animated: true)
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "Scores") as! HighScoreViewController
+                        self?.present(newViewController, animated: true, completion: nil)
+                        //self?.navigationController?.popViewController(animated: true)
                     })
                     self?.present(alert, animated: true, completion: nil)
                 }
