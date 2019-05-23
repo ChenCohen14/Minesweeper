@@ -57,7 +57,7 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func removeAnottations(){
-       var annotations = self.mapView.annotations
+        let annotations = self.mapView.annotations
             for _annotation in annotations {
                 if let annotation = _annotation as? MKAnnotation{
                     self.mapView.removeAnnotation(annotation)
@@ -74,7 +74,7 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
                 let userLocationCoordinates = CLLocationCoordinate2DMake(latitude, longitude)
                 print("\n\(latitude)\n")
                 print(longitude)
-                var pinForUserLocation = MKPointAnnotation()
+                let pinForUserLocation = MKPointAnnotation()
                 pinForUserLocation.coordinate = userLocationCoordinates
                 pinForUserLocation.title =  scoresDictionary![HighScoreViewController.difficulty]![i].name
                 pinForUserLocation.subtitle = "\(scoresDictionary![HighScoreViewController.difficulty]![i].time)s"
