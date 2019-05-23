@@ -35,8 +35,8 @@ class Score :NSObject,NSCoding {
         self.level = level
         self.name = name
         self.time = Int(time) ?? -1
-        self.latitude = Double(latitude) ?? 0
-        self.longitude = Double(longitude) ?? 0
+        self.latitude = Double(latitude)!
+        self.longitude = Double(longitude)!
 
     }
     

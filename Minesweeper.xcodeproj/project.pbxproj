@@ -76,7 +76,6 @@
 				E6C8FC87321F67EB8673B6FF /* Pods-Minesweeper.debug.xcconfig */,
 				0E2FD4428125CCF303638314 /* Pods-Minesweeper.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

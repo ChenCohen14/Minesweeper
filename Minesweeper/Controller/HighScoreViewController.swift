@@ -48,6 +48,7 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
             HighScoreViewController.difficulty = title
        
         //scoreTableView.reloadData()
+        //removeAnottations()
         removeAnottations()
         findUserLocationAndDropPin()
        DispatchQueue.main.async { self.scoreTableView.reloadData() }
@@ -65,18 +66,23 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
      func findUserLocationAndDropPin() {
-        var pinForUserLocation = MKPointAnnotation()
+       // var pinForUserLocation = MKPointAnnotation()
         if scoresDictionary?[HighScoreViewController.difficulty] != nil {
             for i in 0..<scoresDictionary![HighScoreViewController.difficulty]!.count{
                 let latitude = scoresDictionary![HighScoreViewController.difficulty]![i].latitude
                 let longitude = scoresDictionary![HighScoreViewController.difficulty]![i].longitude
                 let userLocationCoordinates = CLLocationCoordinate2DMake(latitude, longitude)
+                print("\n\(latitude)\n")
+                print(longitude)
+                var pinForUserLocation = MKPointAnnotation()
                 pinForUserLocation.coordinate = userLocationCoordinates
                 pinForUserLocation.title =  scoresDictionary![HighScoreViewController.difficulty]![i].name
                 mapView.addAnnotation(pinForUserLocation)
+                mapView.showAnnotations([pinForUserLocation], animated: true)
+
             }
         
-        mapView.showAnnotations([pinForUserLocation], animated: true)
+        //mapView.showAnnotations([pinForUserLocation], animated: true)
         }
     }
     

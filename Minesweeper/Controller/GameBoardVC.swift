@@ -12,7 +12,7 @@ import GameplayKit
 import CoreLocation
 
 
-class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,CLLocationManagerDelegate {
     
     
     @IBOutlet weak var imagesCollection : UICollectionView!
@@ -36,16 +36,22 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var minesLeft = 0
     var userName = " "
     let locationManager = CLLocationManager()
-
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imagesCollection.dataSource = self
         imagesCollection.delegate = self
         
+        
         screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
+        
+        
+          checkLocationServices()
+        
+
         
         // Do any additional setup after loading the view, typically from a nib.
         var space = 0
@@ -71,6 +77,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         
     }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gameManager.getBoard().getCols()
@@ -130,6 +137,7 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     alert.addAction(UIAlertAction(title: "OK", style: .default)
                     {
                         [weak self] action in
+                    
                         self?.navigationController?.popViewController(animated: true)
                     })
                     self?.present(alert, animated: true, completion: nil)
@@ -201,6 +209,43 @@ class GameBoardVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         imagesCollection.delegate=nil
         imagesCollection.dataSource=nil
     }
+    
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Show alert letting the user know they have to turn this on.
+        }
+    }
+    
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+          
+            locationManager.startUpdatingLocation()
+            break
+        case .denied:
+            // Show alert instructing them how to turn on permissions
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // Show an alert letting them know what's up
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
+    
+    
+    
     
     
     
