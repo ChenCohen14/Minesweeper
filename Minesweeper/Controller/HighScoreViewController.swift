@@ -14,6 +14,7 @@ import CoreLocation
 class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
+    @IBOutlet var buttonsCollection: [UIButton]!
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var scoreTableView: UITableView!
@@ -31,29 +32,45 @@ class HighScoreViewController: UIViewController,UITableViewDelegate,UITableViewD
         self.scoreTableView.rowHeight = 35
         self.scoreTableView.tableFooterView = UIView()
         scoresDictionary = Score.loadFromDisk() 
-       // if scoresDictionary != nil{
-            scoreTableView.delegate = self
-            scoreTableView.dataSource = self
-      //  }
+        scoreTableView.delegate = self
+        scoreTableView.dataSource = self
         
         checkLocationServices()
-        findUserLocationAndDropPin()
+        btPressed(buttonsCollection[0])
+      //  findUserLocationAndDropPin()
 
     }
     
     
 
     @IBAction func btPressed(_ sender: UIButton) {
+       sender.showsTouchWhenHighlighted = true
        if let title = sender.titleLabel?.text{
             HighScoreViewController.difficulty = title
-       
-        //scoreTableView.reloadData()
-        //removeAnottations()
-        removeAnottations()
-        findUserLocationAndDropPin()
-       DispatchQueue.main.async { self.scoreTableView.reloadData() }
+            lockAllButtonsExceptThis(buttonsColletion: self.buttonsCollection, title: title)
+            removeAnottations()
+            findUserLocationAndDropPin()
+            DispatchQueue.main.async { self.scoreTableView.reloadData()
+                self.releaseAllButtons(buttonsColletion: self.buttonsCollection)
+        }
         }
         
+    }
+    func lockAllButtonsExceptThis(buttonsColletion: [UIButton], title: String){
+        for i in 0..<buttonsCollection.count{
+            if buttonsCollection[i].currentTitle == title {
+                buttonsCollection[i].backgroundColor = UIColor.cyan
+            }
+            else{
+                buttonsCollection[i].backgroundColor = UIColor.lightGray
+                buttonsCollection[i].isEnabled = false
+            }
+        }
+    }
+    func releaseAllButtons(buttonsColletion: [UIButton]){
+        for i in 0..<buttonsCollection.count{
+            buttonsCollection[i].isEnabled = true
+        }
     }
     
     func removeAnottations(){
