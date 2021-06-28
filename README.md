@@ -1,2 +1,2 @@
 # Minesweeper
-The well-known and popular game for IOS Minesweeper.
+The well-known and popular game Minesweeper for IOS.
